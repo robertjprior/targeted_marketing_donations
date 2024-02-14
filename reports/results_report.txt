@@ -1,0 +1,135 @@
+<class 'xgboost.sklearn.XGBClassifier'>
+Best Score:0.38804554079696396
+Model Setup:{'data_filter__label_issues_b': 0.05074442860330517, 'data_filter__outlier_y': 2183, 'interaction_gen__interaction_only': True, 'model__subsample': 0.7585904240303089, 'model__eval_metric': 'mlogloss', 'model__n_estimators': 107, 'model__max_depth': 13, 'model__learning_rate': 0.07350065570904905, 'model__colsample_bytree': 0.987799359811411, 'model__scale_pos_weight': 18.554959265531583, 'model__gamma': 1.8604921785087964, 'model__reg_lambda': 5.767640529201132}
+
+              precision    recall  f1-score   support
+
+           0       0.99      0.86      0.92      9010
+           1       0.25      0.86      0.39       476
+
+    accuracy                           0.86      9486
+   macro avg       0.62      0.86      0.66      9486
+weighted avg       0.95      0.86      0.90      9486
+
+<class 'sklearn.ensemble._forest.RandomForestClassifier'>
+Best Score:0.3857677902621723
+Model Setup:{'data_filter__label_issues_b': 0.027431397751747924, 'data_filter__outlier_y': 2025, 'interaction_gen__interaction_only': True, 'model__n_estimators': 335, 'model__max_depth': 9, 'model__min_samples_split': 7, 'model__min_samples_leaf': 2, 'model__class_weight': 'balanced', 'model__max_features': 'sqrt'}
+
+              precision    recall  f1-score   support
+
+           0       0.99      0.86      0.92      9010
+           1       0.25      0.85      0.38       476
+
+    accuracy                           0.86      9486
+   macro avg       0.62      0.86      0.65      9486
+weighted avg       0.95      0.86      0.89      9486
+
+Recall focused model
+<class 'xgboost.sklearn.XGBClassifier'>
+Best Score:0.9621848739495799
+Model Setup:{'data_filter__label_issues_b': 0.002362662406181191, 'data_filter__outlier_y': 1596, 'interaction_gen__interaction_only': True, 'model__subsample': 0.997696470410287, 'model__eval_metric': 'mlogloss', 'model__n_estimators': 250, 'model__max_depth': 15, 'model__learning_rate': 0.3873167880476876, 'model__colsample_bytree': 0.7615539313682577, 'model__scale_pos_weight': 15.581945161283238, 'model__gamma': 4.966513046711529, 'model__reg_lambda': 9.593366325661087}
+
+              precision    recall  f1-score   support
+
+           0       1.00      0.84      0.91      9010
+           1       0.24      0.96      0.38       476
+
+    accuracy                           0.84      9486
+   macro avg       0.62      0.90      0.65      9486
+weighted avg       0.96      0.84      0.88      9486
+
+<class 'xgboost.sklearn.XGBRegressor'>
+Best Score:76.77724519300267
+Model Setup:{'interaction_gen__interaction_only': True, 'k': 19, 'max_depth': 14, 'min_child_weight': 6, 'subsample': 0.9870030488732162, 'colsample_bytree': 0.7530098996159678, 'learning_rate': 0.24085353852527414, 'n_estimators': 996}
+
+<class 'sklearn.ensemble._forest.RandomForestRegressor'>
+Best Score:113.03485007159357
+Model Setup:{'interaction_gen__interaction_only': True, 'k': 34, 'n_estimators': 149, 'max_depth': 6, 'min_samples_split': 2, 'max_features': 'log2'}
+
+<class 'catboost.core.CatBoostRegressor'>
+Best Score:92.02242363896609
+Model Setup:{'interaction_gen__interaction_only': False, 'k': 40, 'iterations': 104, 'depth': 7, 'learning_rate': 0.1126060935903445, 'l2_leaf_reg': 9.506563447482085, 'bagging_temperature': 0.995019456366731, 'subsample': 0.7318822565761879, 'grow_policy': 'SymmetricTree', 'random_strength': 0.6342618385135009}
+
+<class 'nonconformist.icp.IcpRegressor'>
+Test Coverage (alpha=0.1):0.8911917098445595
+
+Model Setup:{'memory': None, 'steps': [('data_cleaner', ColumnTransformer(transformers=[('num_onehot_missing',
+                                 Pipeline(steps=[('missing_indicator',
+                                                  MissingIndicator())]),
+                                 ['CONTROL_NUMBER', 'MONTHS_SINCE_ORIGIN',
+                                  'NUMBER_OF_RESP', 'DONOR_AGE', 'IN_HOUSE',
+                                  'CLUSTER_CODE', 'INCOME_GROUP',
+                                  'PUBLISHED_PHONE', 'WEALTH_RATING',
+                                  'MEDIAN_HOME_VALUE',
+                                  'MEDIAN_HOUSEHOLD_INCOME',
+                                  'PCT_OWNER_OCCUPIED', 'PEP_STAR',
+                                  'RECENT_STAR_ST...
+                                  'MONTHS_SINCE_LAST_PROM_RESP',
+                                  'LAST_GIFT_AMT', 'NUMBER_PROM_12',
+                                  'MONTHS_SINCE_LAST_GIFT',
+                                  'MONTHS_SINCE_FIRST_GIFT']),
+                                ('cat',
+                                 Pipeline(steps=[('imputer',
+                                                  SimpleImputer(fill_value='missing',
+                                                                strategy='constant')),
+                                                 ('onehot',
+                                                  OneHotEncoder(handle_unknown='infrequent_if_exist',
+                                                                sparse=False))]),
+                                 ['URBANICITY', 'HOME_OWNER', 'DONOR_GENDER',
+                                  'RECENCY_FREQ_STATUS'])])), ('interaction_gen', PolynomialFeatures(degree=1, include_bias=False, interaction_only=True)), ('feature_selection', SelectKBest(score_func=<function f_regression at 0xffff2f706fc0>)), ('model', XGBRegressor(alpha=1, base_score=None, booster=None, callbacks=None,
+             colsample_bylevel=None, colsample_bynode=None,
+             colsample_bytree=0.7530098996159678, device=None,
+             early_stopping_rounds=None, enable_categorical=False,
+             eval_metric=None, feature_types=None, gamma=None, grow_policy=None,
+             importance_type=None, interaction_constraints=None,
+             learning_rate=0.24085353852527414, max_bin=None,
+             max_cat_threshold=None, max_cat_to_onehot=None,
+             max_delta_step=None, max_depth=14, max_leaves=None,
+             min_child_weight=6, missing=nan, monotone_constraints=None,
+             multi_strategy=None, n_estimators=996, n_jobs=None,
+             num_parallel_tree=None, ...))], 'verbose': False, 'data_cleaner': ColumnTransformer(transformers=[('num_onehot_missing',
+                                 Pipeline(steps=[('missing_indicator',
+                                                  MissingIndicator())]),
+                                 ['CONTROL_NUMBER', 'MONTHS_SINCE_ORIGIN',
+                                  'NUMBER_OF_RESP', 'DONOR_AGE', 'IN_HOUSE',
+                                  'CLUSTER_CODE', 'INCOME_GROUP',
+                                  'PUBLISHED_PHONE', 'WEALTH_RATING',
+                                  'MEDIAN_HOME_VALUE',
+                                  'MEDIAN_HOUSEHOLD_INCOME',
+                                  'PCT_OWNER_OCCUPIED', 'PEP_STAR',
+                                  'RECENT_STAR_ST...
+                                  'MONTHS_SINCE_LAST_PROM_RESP',
+                                  'LAST_GIFT_AMT', 'NUMBER_PROM_12',
+                                  'MONTHS_SINCE_LAST_GIFT',
+                                  'MONTHS_SINCE_FIRST_GIFT']),
+                                ('cat',
+                                 Pipeline(steps=[('imputer',
+                                                  SimpleImputer(fill_value='missing',
+                                                                strategy='constant')),
+                                                 ('onehot',
+                                                  OneHotEncoder(handle_unknown='infrequent_if_exist',
+                                                                sparse=False))]),
+                                 ['URBANICITY', 'HOME_OWNER', 'DONOR_GENDER',
+                                  'RECENCY_FREQ_STATUS'])]), 'interaction_gen': PolynomialFeatures(degree=1, include_bias=False, interaction_only=True), 'feature_selection': SelectKBest(score_func=<function f_regression at 0xffff2f706fc0>), 'model': XGBRegressor(alpha=1, base_score=None, booster=None, callbacks=None,
+             colsample_bylevel=None, colsample_bynode=None,
+             colsample_bytree=0.7530098996159678, device=None,
+             early_stopping_rounds=None, enable_categorical=False,
+             eval_metric=None, feature_types=None, gamma=None, grow_policy=None,
+             importance_type=None, interaction_constraints=None,
+             learning_rate=0.24085353852527414, max_bin=None,
+             max_cat_threshold=None, max_cat_to_onehot=None,
+             max_delta_step=None, max_depth=14, max_leaves=None,
+             min_child_weight=6, missing=nan, monotone_constraints=None,
+             multi_strategy=None, n_estimators=996, n_jobs=None,
+             num_parallel_tree=None, ...), 'data_cleaner__n_jobs': None, 'data_cleaner__remainder': 'drop', 'data_cleaner__sparse_threshold': 0.3, 'data_cleaner__transformer_weights': None, 'data_cleaner__transformers': [('num_onehot_missing', Pipeline(steps=[('missing_indicator', MissingIndicator())]), ['CONTROL_NUMBER', 'MONTHS_SINCE_ORIGIN', 'NUMBER_OF_RESP', 'DONOR_AGE', 'IN_HOUSE', 'CLUSTER_CODE', 'INCOME_GROUP', 'PUBLISHED_PHONE', 'WEALTH_RATING', 'MEDIAN_HOME_VALUE', 'MEDIAN_HOUSEHOLD_INCOME', 'PCT_OWNER_OCCUPIED', 'PEP_STAR', 'RECENT_STAR_STATUS', 'RECENT_CARD_RESPONSE_PROP', 'MONTHS_SINCE_LAST_PROM_RESP', 'LAST_GIFT_AMT', 'NUMBER_PROM_12', 'MONTHS_SINCE_LAST_GIFT', 'MONTHS_SINCE_FIRST_GIFT']), ('num', Pipeline(steps=[('imputer', SimpleImputer(strategy='median')),
+                ('scaler', MinMaxScaler())]), ['CONTROL_NUMBER', 'MONTHS_SINCE_ORIGIN', 'NUMBER_OF_RESP', 'DONOR_AGE', 'IN_HOUSE', 'CLUSTER_CODE', 'INCOME_GROUP', 'PUBLISHED_PHONE', 'WEALTH_RATING', 'MEDIAN_HOME_VALUE', 'MEDIAN_HOUSEHOLD_INCOME', 'PCT_OWNER_OCCUPIED', 'PEP_STAR', 'RECENT_STAR_STATUS', 'RECENT_CARD_RESPONSE_PROP', 'MONTHS_SINCE_LAST_PROM_RESP', 'LAST_GIFT_AMT', 'NUMBER_PROM_12', 'MONTHS_SINCE_LAST_GIFT', 'MONTHS_SINCE_FIRST_GIFT']), ('cat', Pipeline(steps=[('imputer',
+                 SimpleImputer(fill_value='missing', strategy='constant')),
+                ('onehot',
+                 OneHotEncoder(handle_unknown='infrequent_if_exist',
+                               sparse=False))]), ['URBANICITY', 'HOME_OWNER', 'DONOR_GENDER', 'RECENCY_FREQ_STATUS'])], 'data_cleaner__verbose': False, 'data_cleaner__verbose_feature_names_out': True, 'data_cleaner__num_onehot_missing': Pipeline(steps=[('missing_indicator', MissingIndicator())]), 'data_cleaner__num': Pipeline(steps=[('imputer', SimpleImputer(strategy='median')),
+                ('scaler', MinMaxScaler())]), 'data_cleaner__cat': Pipeline(steps=[('imputer',
+                 SimpleImputer(fill_value='missing', strategy='constant')),
+                ('onehot',
+                 OneHotEncoder(handle_unknown='infrequent_if_exist',
+                               sparse=False))]), 'data_cleaner__num_onehot_missing__memory': None, 'data_cleaner__num_onehot_missing__steps': [('missing_indicator', MissingIndicator())], 'data_cleaner__num_onehot_missing__verbose': False, 'data_cleaner__num_onehot_missing__missing_indicator': MissingIndicator(), 'data_cleaner__num_onehot_missing__missing_indicator__error_on_new': True, 'data_cleaner__num_onehot_missing__missing_indicator__features': 'missing-only', 'data_cleaner__num_onehot_missing__missing_indicator__missing_values': nan, 'data_cleaner__num_onehot_missing__missing_indicator__sparse': 'auto', 'data_cleaner__num__memory': None, 'data_cleaner__num__steps': [('imputer', SimpleImputer(strategy='median')), ('scaler', MinMaxScaler())], 'data_cleaner__num__verbose': False, 'data_cleaner__num__imputer': SimpleImputer(strategy='median'), 'data_cleaner__num__scaler': MinMaxScaler(), 'data_cleaner__num__imputer__add_indicator': False, 'data_cleaner__num__imputer__copy': True, 'data_cleaner__num__imputer__fill_value': None, 'data_cleaner__num__imputer__keep_empty_features': False, 'data_cleaner__num__imputer__missing_values': nan, 'data_cleaner__num__imputer__strategy': 'median', 'data_cleaner__num__scaler__clip': False, 'data_cleaner__num__scaler__copy': True, 'data_cleaner__num__scaler__feature_range': (0, 1), 'data_cleaner__cat__memory': None, 'data_cleaner__cat__steps': [('imputer', SimpleImputer(fill_value='missing', strategy='constant')), ('onehot', OneHotEncoder(handle_unknown='infrequent_if_exist', sparse=False))], 'data_cleaner__cat__verbose': False, 'data_cleaner__cat__imputer': SimpleImputer(fill_value='missing', strategy='constant'), 'data_cleaner__cat__onehot': OneHotEncoder(handle_unknown='infrequent_if_exist', sparse=False), 'data_cleaner__cat__imputer__add_indicator': False, 'data_cleaner__cat__imputer__copy': True, 'data_cleaner__cat__imputer__fill_value': 'missing', 'data_cleaner__cat__imputer__keep_empty_features': False, 'data_cleaner__cat__imputer__missing_values': nan, 'data_cleaner__cat__imputer__strategy': 'constant', 'data_cleaner__cat__onehot__categories': 'auto', 'data_cleaner__cat__onehot__drop': None, 'data_cleaner__cat__onehot__dtype': <class 'numpy.float64'>, 'data_cleaner__cat__onehot__feature_name_combiner': 'concat', 'data_cleaner__cat__onehot__handle_unknown': 'infrequent_if_exist', 'data_cleaner__cat__onehot__max_categories': None, 'data_cleaner__cat__onehot__min_frequency': None, 'data_cleaner__cat__onehot__sparse': False, 'data_cleaner__cat__onehot__sparse_output': True, 'interaction_gen__degree': 1, 'interaction_gen__include_bias': False, 'interaction_gen__interaction_only': True, 'interaction_gen__order': 'C', 'feature_selection__k': 10, 'feature_selection__score_func': <function f_regression at 0xffff2f706fc0>, 'model__objective': 'count:poisson', 'model__base_score': None, 'model__booster': None, 'model__callbacks': None, 'model__colsample_bylevel': None, 'model__colsample_bynode': None, 'model__colsample_bytree': 0.7530098996159678, 'model__device': None, 'model__early_stopping_rounds': None, 'model__enable_categorical': False, 'model__eval_metric': None, 'model__feature_types': None, 'model__gamma': None, 'model__grow_policy': None, 'model__importance_type': None, 'model__interaction_constraints': None, 'model__learning_rate': 0.24085353852527414, 'model__max_bin': None, 'model__max_cat_threshold': None, 'model__max_cat_to_onehot': None, 'model__max_delta_step': None, 'model__max_depth': 14, 'model__max_leaves': None, 'model__min_child_weight': 6, 'model__missing': nan, 'model__monotone_constraints': None, 'model__multi_strategy': None, 'model__n_estimators': 996, 'model__n_jobs': None, 'model__num_parallel_tree': None, 'model__random_state': None, 'model__reg_alpha': None, 'model__reg_lambda': None, 'model__sampling_method': None, 'model__scale_pos_weight': None, 'model__subsample': 0.9870030488732162, 'model__tree_method': 'approx', 'model__validate_parameters': None, 'model__verbosity': None, 'model__alpha': 1}
+
